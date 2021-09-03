@@ -1,0 +1,600 @@
+{
+	"info": {
+		"_postman_id": "76cf54ce-53a5-49f0-8681-976e70811e65",
+		"name": "RestCountries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all restcountris",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/all",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get restcountries alphacode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/alpha/co",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"alpha",
+						"co"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get restcountries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_enviroment}}",
+					"host": [
+						"{{Base_enviroment}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.get(\"variable_key\");\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/name/Colombia",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"name",
+						"Colombia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchByFullName with wrong value",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/name/Africa?fullText=true",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"name",
+						"Africa"
+					],
+					"query": [
+						{
+							"key": "fullText",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by country code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/alpha/col",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"alpha",
+						"col"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by list of country codes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/alpha?codes=col;no;ee",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"alpha"
+					],
+					"query": [
+						{
+							"key": "codes",
+							"value": "col;no;ee"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by currency code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/currency/DZD",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"currency",
+						"DZD"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by language code.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/lang/ar",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"lang",
+						"ar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by capital city",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/capital/Andorra la Vella",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"capital",
+						"Andorra la Vella"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by calling code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/callingcode/376",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"callingcode",
+						"376"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by Region",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/region/Africa",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"region",
+						"Africa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by regional bloc",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/regionalbloc/AL",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"regionalbloc",
+						"AL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by alpha code with wrong value",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/alpha/c",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"alpha",
+						"c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search all countries with wrong data ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/All",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"All"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search country with wrong method",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/v2/alpha/col",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"v2",
+						"alpha",
+						"col"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by correct full name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rest countries enviroment }}/name/Africa?fullText=true",
+					"host": [
+						"{{rest countries enviroment }}"
+					],
+					"path": [
+						"name",
+						"Africa"
+					],
+					"query": [
+						{
+							"key": "fullText",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "rest countries enviroment ",
+			"value": "https://restcountries.eu"
+		},
+		{
+			"key": "Base_enviroment",
+			"value": "restcountries"
+		}
+	]
+}
